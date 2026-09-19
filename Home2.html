@@ -1,0 +1,242 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEDxYouth STEM Oct 11th District</title>
+  <link rel="icon" href="icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/7fdd346d74.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      scroll-behavior: smooth;
+      background-color: #000;
+      color: #fff;
+    }header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header img {
+  height: 50px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  background: none;
+  border: none;
+}
+
+nav {
+  display: flex;
+  gap: 1.2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #cd1e1e;
+}
+
+.hero {
+  text-align: center;
+  padding: 6rem 1.5rem 3rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-family: 'Audiowide', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.nexula-span {
+  background: linear-gradient(135deg, #cb0000, #8f0707);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #ccc;
+}
+
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.book-btn, .know-tedx-btn {
+  background: linear-gradient(135deg, #cd1e1e, #8f0707);
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.book-btn:hover, .know-tedx-btn:hover {
+  background: black;
+  color: #fff;
+  box-shadow: 0 0 12px #ff0000;
+}
+
+section {
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.nexula-section h2 {
+  font-size: 2.8rem;
+  font-family: 'Orbitron', sans-serif;
+  color: #cd1e1e;
+  margin-bottom: 1rem;
+}
+
+.nexula-section p {
+  max-width: 800px;
+  margin: 1rem auto;
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.nexula-image-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.nexula-image-grid img {
+  width: 280px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+}
+
+footer {
+  padding: 2rem 1rem;
+  background: #111;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.social-icons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-icons a {
+  color: #ddd;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ff0000;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #000;
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    left: 0;
+    padding: 1rem 0;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo_nav.png" alt="TEDx Logo">
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav id="main-nav">
+      <a href="#" class="active">Home</a>
+      <a href="#nexula-info">About</a>
+      <a href="#articles">Articles</a>
+      <a href="#tickets">Event</a>
+      <a href="#signup" class="know-tedx-btn">What is TED<sup>x</sup></a>
+    </nav>
+  </header>  <div class="hero" data-aos="fade-up">
+    <h1>Welcome to <span class="nexula-span">NEXULA!</span></h1>
+    <p>A cosmic space where connections ignite and new stars rise. Join us as we link the brightest minds together.</p>
+    <div class="hero-buttons">
+      <a href="#nexula-info" class="book-btn">Learn More</a>
+      <a href="#signup" class="book-btn">Book Tickets!</a>
+    </div>
+  </div>  <section id="nexula-info" class="nexula-section" data-aos="fade-up">
+    <h2>What is NEXULA?</h2>
+    <p>NEXULA is a fusion of two words: <strong>Nexus</strong> and <strong>Nebula</strong>. <br>
+      <strong>Nexus</strong> means unity. <strong>Nebula</strong> represents cosmic beginnings. Together, NEXULA is a universe of emerging minds and ideas.
+    </p>
+    <div class="nexula-image-grid">
+      <img src="nexus.jpg" alt="Nexus">
+      <img src="nebula.jpg" alt="Nebula">
+    </div>
+  </section>  <footer>
+    &copy; 2025 TEDxYouth@October11th. All rights reserved. |
+    <a href="#">Privacy</a> |
+    <a href="#">Terms</a> |
+    <a href="#">Team</a> |
+    <a href="mailto:tedxoct11@gmail.com">Contact</a>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fas fa-envelope"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+    </div>
+  </footer>  <script src="https://cdn.jsdelivr.net/npm/aos@next/dist/aos.js"></script>  <script>
+    AOS.init();
+
+    function toggleMenu() {
+      document.getElementById('main-nav').classList.toggle('show');
+    }
+  </script></body>
+</html>

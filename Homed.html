@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEDxYouth STEM Oct 11th District</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="icon" href="icon.png">
+  <script src="https://kit.fontawesome.com/7fdd346d74.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    canvas, #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background-color: #000;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.85);
+      font-family: 'Orbitron', sans-serif;
+      position: relative;
+      z-index: 10;
+    }
+    header img {
+      height: 65px;
+    }
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #a71212;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .hamburger div {
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.9);
+        top: 70px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+        border-left: 1px solid #444;
+        z-index: 999;
+      }
+      nav.active {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    .book-btn {
+      background: linear-gradient(135deg, #ff0000, #ff0000);
+      padding: 0.5rem 1.2rem;
+      border-radius: 30px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 0 8px #ff0000;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .book-btn:hover {
+      background: black;
+      color: #fff;
+      border-color: #8b0606;
+      box-shadow: 0 0 15px #ff0000;
+    }
+
+    .hero {
+      position: relative;
+      top: 20vh;
+      text-align: center;
+      color: white;
+      font-family: 'Open Sans', sans-serif;
+      z-index: 2;
+      padding: 0 20px;
+    }
+
+    #headline.typing {
+      font-size: 5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #ff0000;
+      width: 0;
+      margin: 0 auto;
+      animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
+      font-family: "Audiowide", sans-serif;
+    }
+
+    .hero-text {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #ddd;
+    }
+
+    .nexula-span {
+      color: #cd0909;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: #ff0000; }
+    }
+
+    footer {
+      text-align: center;
+      color: #ccc;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.8);
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #ccc;
+      margin: 0 5px;
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      margin: 0 5px;
+      color: #ccc;
+      font-size: 18px;
+    }
+
+    @media (max-width: 600px) {
+      #headline.typing {
+        font-size: 2.5rem;
+      }
+      .hero-text {
+        font-size: 1rem;
+      }
+      footer {
+        font-size: 12px;
+      }
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="particles-js"></div>
+
+  <header>
+    <a href="index.html"><img src="logo_nav.png" alt="TEDx Logo"></a>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="#Aboutus" class="active">About Us</a>
+      <a href="Articles.html" class="active">Articles</a>
+      <a href="tickets.html" class="active">Our Event</a>
+      <a href="signup.html" class="active">Book a Ticket</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <div class="hero">
+    <h1 id="headline" class="typing">Welcome to <span class="nexula-span">NEXULA !</span></h1>
+    <p class="hero-text">
+      A cosmic space where connections ignite and new stars rise.<br>
+      Join us as we link the brightest minds in our community together.
+    </p>
+    <a href="signup.html" class="book-btn">Attend</a>
+  </div>
+
+  <footer>
+    &copy; 2025 TEDxYouth@October11th. All rights reserved. |
+    <a href="privacy-policy.html">Privacy Policy</a> |
+    <a href="terms-of-use.html">Terms of Use</a>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/tedxyouthoctobe11stem" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/201055485256" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:tedxoct11@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.tiktok.com/@tedxyouthoctobe11stem" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.facebook.com/TEDxYouthOctober11thSTEM" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('header nav');
+      nav.classList.toggle('active');
+    }
+
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('nav').classList.remove('active');
+      });
+    });
+
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 150, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ff0000", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 6 }
+      },
+      "interactivity": {
+        "events": {
+          "onclick": { "enable": true, "mode": "push" },
+          "resize": true
+        },
+        "modes": {
+          "push": { "particles_nb": 4 }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>cles.innerText = window.pJSDom[0].pJS.particles.array.length; } requestAnimationFrame(update); }; requestAnimationFrame(update);;
+
+  </script>
+    <footer>
+    &copy; 2025 TEDxYouth@October11th. All rights reserved. |
+    <a href="privacy-policy.html">Privacy Policy</a> |
+    <a href="terms-of-use.html">Terms of Use</a> |
+    <a href="mailto:tedx@gmail.com">Contact</a>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/tedxyouthoctobe11stem" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/201055485256" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:tedxoct11@gmail.com" aria-label="Gmail" target="_blank"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.tiktok.com/@tedxyouthoctobe11stem" aria-label="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.facebook.com/TEDxYouthOctober11thSTEM" aria-label="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+  </footer>
+  <script>
+  function toggleMenu() {
+  const nav = document.querySelector('header nav');
+  nav.classList.toggle('active');
+  }
+  </script>
+</body>
+
+</html>

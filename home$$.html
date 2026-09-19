@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEDxYouth STEM Oct 11th District</title>
+  <link rel="icon" href="icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/7fdd346d74.js" crossorigin="anonymous"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Michroma&family=Orbitron:wght@400..900&display=swap');
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      box-sizing: border-box;
+      flex-direction: column;
+      scroll-behavior: smooth;
+    }
+
+    .page-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    canvas {
+      display: block;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #000000;
+      z-index: -1;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.9rem 2rem;
+      background-color: rgba(0, 0, 0, 0.85);
+      font-family: 'Orbitron', sans-serif;
+      position: relative;
+      z-index: 10;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0.5rem 1rem;
+      transition: color 0.3s;
+      font-size: 15px;
+    }
+
+    nav a.active:hover {
+      color: #a71212;
+    }
+
+    .book-btn, .know-tedx-btn {
+      background: linear-gradient(135deg, #cd1e1e, #8f0707);
+      color: white;
+      font-weight: bold;
+      border-radius: 30px;
+      box-shadow: 0 0 8px #cd1e1e;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem; 
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .hero .book-btn {
+      margin: 1rem 1rem;
+    }
+
+    .hero .book-btn:first-of-type {
+      background: linear-gradient(135deg, #3a3838, #222325);
+      box-shadow: 0 0 8px #565353;
+      border-color: #28292b;
+    }
+
+    .hero .book-btn:first-of-type:hover {
+      background: rgb(0, 0, 0);
+      color: rgb(255, 255, 255);
+      border-color: #595454;
+      box-shadow: 0 0 15px #ffffff;
+    }
+
+    .know-tedx-btn {
+      padding: 0.5rem 1.2rem;
+    }
+
+    .book-btn {
+      background: linear-gradient(135deg, #cd1e1e, #8f0707);
+      color: white;
+      font-weight: bold;
+      border-radius: 100px;
+      box-shadow: 0 0 8px #cd1e1e;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      padding: 0.9rem 1.9rem;
+      font-size: 1.1rem;
+      font-family: 'Orbitron', sans-serif;
+      margin-top: 0.8rem;
+      display: inline-block;
+      min-width: 140px; 
+      text-align: center;
+    }
+
+    .book-btn:hover,
+    .know-tedx-btn:hover {
+      background: black;
+      color: #ffffff;
+      border-color: #8b0606;
+      box-shadow: 0 0 15px #ff0000;
+    }
+
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      font-family: 'Open Sans', sans-serif;
+      z-index: 2;
+      padding: 0 20px;
+    }
+
+    #headline {
+      font-size: 5rem;
+      margin: 0 auto;
+      font-family: "Audiowide", sans-serif;
+    }
+
+    .hero-text {
+      margin-top: 0.8rem;
+      font-size: 1.2rem;
+      line-height: 1.7;
+      max-width: 740px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #ddd;
+      font-family: "Audiowide", sans-serif;
+    }
+
+    .nexula-span {
+      font-weight: bolder;
+      background: linear-gradient(135deg, #cb0000, #8f0707); 
+      -webkit-background-clip: text; 
+      -webkit-text-fill-color: transparent; 
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #000;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+
+    footer a {
+      color: #dddddd;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #ff0000;
+    }
+
+    .social-icons {
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .social-icons a {
+      font-size: 1.2rem;
+      color: #dddddd;
+    }
+
+    .social-icons a:hover {
+      color: #ff0000;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        text-align: center;
+        padding: 1rem 0;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      nav a {
+        margin: 0.7rem 0;
+        font-size: 15px;
+      }
+
+      #headline {
+        font-size: 2.5rem;
+      }
+
+      .hero-text {
+        font-size: 1rem;
+      }
+
+      header img {
+        height: 50px;
+      }
+    }
+
+    .nexula-section {
+      color: #ffffff;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-family: "Audiowide", sans-serif;
+      margin-top: 0vh;
+    }
+
+    .nexula-section h2 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: bolder;
+    }
+
+    .nexula-red {
+      color: #cd1e1e;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: bolder;
+    }
+
+    .nexula-section p {
+      max-width: 1200px;
+      margin: 1rem auto;
+      font-size: 1.4rem;
+      line-height: 1.8;
+      color: #d8d7d7;
+    }
+
+    .nexula-image-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 5rem;
+      margin-top: 4rem;
+    }
+
+    .nexula-image-grid img {
+      width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    }
+
+    @media (max-width: 480px) {
+      #headline {
+        font-size: 2rem;
+      }
+
+      .hero {
+        top: 15vh;
+        padding: 0 10px;
+      }
+
+      .hero-text {
+        font-size: 0.95rem;
+      }
+    }
+    
+    .counter {
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+    }
+    
+    .counter-item {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    
+    .counter-item span {
+      display: block;
+      font-size: 3rem;
+      font-weight: bold;
+      color: #cb0000;
+    }
+    
+    .counter-item small {
+      display: block;
+      font-size: 1rem;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <div class="page-container">
+    <header>
+      <img src="logo_nav.png" alt="TEDx Logo">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <nav id="main-nav">
+        <a href="#index.html" class="active">Home</a>
+        <a href="#Aboutus" class="active">About Us</a>
+        <a href="#Articles.html" class="active">Articles</a>
+        <a href="#tickets.html" class="active">Our Event</a>
+        <a href="#signup.html" class="know-tedx-btn">What is TED<sup>x</sup></a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <h1 id="headline">Welcome to <span class="nexula-span">NEXULA !</span></h1>
+      <p class="hero-text">
+        A cosmic space where connections ignite and new stars rise.<br>
+        Join us as we link the brightest minds in our community together.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#nexula-info" class="book-btn">Learn More</a>
+        <a href="#signup.html" class="book-btn">Book Tickets !</a>
+      </div>
+      
+      <div class="counter" id="counter" style="margin-top: 2.5rem;">
+        <span class="counter-item"><span id="days">0</span><small>DAYS</small></span>
+        <span class="counter-item"><span id="hours">0</span><small>HRS</small></span>
+        <span class="counter-item"><span id="minutes">0</span><small>MINS</small></span>
+        <span class="counter-item"><span id="seconds">0</span><small>SECS</small></span>
+      </div>
+    </div>
+    
+    <section id="nexula-info" class="nexula-section">
+      <div class="nexula-content">
+        <h2>What is <span class="nexula-red">NEXULA</span>?</h2>
+        <p>
+          NEXULA is a fusion of two words: <strong>Nexus</strong> and <strong>Nebula</strong>.  
+          <br>
+          <strong>Nexus</strong> stands for connection, unity, and shared purpose.  
+          <strong>Nebula</strong> represents cosmic birthplaces of stars — the beginning of infinite potential.
+        </p>
+        <p>
+          Together, NEXULA is a universe of emerging minds, ideas, and energies — a place where the next generation of leaders, thinkers, and dreamers connect and shine.
+        </p>
+
+        <div class="nexula-image-grid">
+          <img src="nexus.jpg" alt="Connection concept">
+          <img src="nebula.jpg" alt="Nebula star image">
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 TEDxYouth@October11th. All rights reserved. |
+    <a href="privacy-policy.html">Privacy Policy</a> |
+    <a href="terms-of-use.html">Terms of Use</a> |
+    <a href="/About-us.html">Team</a> |
+    <a href="mailto:tedx@gmail.com">Contact</a>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/tedxyouthoctober11stem?igsh=MXQ0MnZzcnVycnEwYg==" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/201055485256" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:tedxoct11@gmail.com" aria-label="Gmail" target="_blank"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.tiktok.com/@tedxyouthoctobe11stem" aria-label="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.facebook.com/share/14DpBMoeCdd/" aria-label="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+  </footer>
+
+  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+  
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 150, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" } },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ff0000", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 6 }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": { "onclick": { "enable": true, "mode": "push" }, "resize": true },
+        "modes": { "push": { "particles_nb": 4 } }
+      },
+      "retina_detect": true
+    });
+
+    var stats = new Stats();
+    stats.setMode(0);
+    stats.domElement.style.position = 'absolute';
+    stats.domElement.style.left = '0px';
+    stats.domElement.style.top = '0px';
+    document.body.appendChild(stats.domElement);
+    var update = function () {
+      stats.begin();
+      stats.end();
+      requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+
+    function toggleMenu() {
+      document.getElementById('main-nav').classList.toggle('show');
+    }
+
+    (function() {
+      const eventDate = new Date("2025-08-05T12:00:00").getTime();
+      
+      const daysEl = document.getElementById("days"),
+            hoursEl = document.getElementById("hours"),
+            minutesEl = document.getElementById("minutes"),
+            secondsEl = document.getElementById("seconds");
+        
+      function updateCounter() {
+        const diff = Date.now() - eventDate; 
+        if (diff <= 0) {
+          daysEl.textContent = hoursEl.textContent = minutesEl.textContent = secondsEl.textContent = 0;
+          return;
+        }
+        const totalSec = Math.floor(diff / 1000);
+        daysEl.textContent = Math.floor(totalSec / 86400);
+        hoursEl.textContent = Math.floor((totalSec % 86400) / 3600);
+        minutesEl.textContent = Math.floor((totalSec % 3600) / 60);
+        secondsEl.textContent = totalSec % 60;
+      }
+
+      updateCounter();
+      setInterval(updateCounter, 1000);
+    })();
+  </script>
+</body>
+</html>
