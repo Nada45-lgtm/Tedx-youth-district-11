@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ticket Booking</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Exo 2', Arial, sans-serif;
+      background-color: #2d2d2d;
+      color: #ccc;
+      margin: 0;
+      padding: 0;
+      direction: ltr;
+    }
+    nav {
+      background-color: #1f1f1f;
+      padding: 15px 30px;
+      text-align: center;
+    }
+    nav a {
+      color: #e62b1e;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+      margin: 40px 0 20px;
+    }
+
+    .tickets-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .ticket-card {
+      background-color: #3a3a3a;
+      border-radius: 8px;
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .ticket-card:hover {
+      transform: scale(1.05);
+    }
+
+    .ticket-icon {
+      font-size: 40px;
+      color: #e62b1e;
+      margin-bottom: 15px;
+    }
+
+    .ticket-title {
+      font-size: 20px;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .ticket-description {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .buy-button {
+      background-color: #e62b1e;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .buy-button:hover {
+      background-color: #cc2417;
+    }
+
+    footer {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  color: #ccc;
+  background-color: #1f1f1f;
+}
+
+   .social-icons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+   .social-icons a i {
+  color: #e62b1e;
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+   .social-icons a:hover i {
+  color: #ff3b2e;
+}
+
+    footer a {
+      color: #aaa;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .tickets-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="speakers.html">Speakers</a>
+    <a href="tickets.html">Book Now</a>
+    <a href="contact.html">Sponsers</a>
+  </nav>
+
+  <h1>Book Now</h1>
+
+<div class="tickets-container">
+  <div class="ticket-card">
+    <i class="fas fa-ticket-alt ticket-icon"></i>
+    <div class="ticket-title">Regular Ticket - 200 EGP</div>
+    <div class="ticket-description">
+      • Access to all TEDx talks and sessions.<br>
+      • Opportunity to network with the speakers.<br>
+      • Participate in engaging workshops.<br>
+      • Chance to receive exclusive giveaways from sponsor booths.
+    </div>
+    <button class="buy-button">Book Now</button>
+  </div>
+
+  <div class="ticket-card">
+    <i class="fas fa-ticket-alt ticket-icon"></i>
+    <div class="ticket-title">Early Bird Ticket - 150 EGP</div>
+    <div class="ticket-description">
+      • All benefits of the Regular Ticket.<br>
+      • Enjoy a special <strong>25% discount</strong> for early booking!
+    </div>
+    <button class="buy-button">Book Now</button>
+  </div>
+
+  <div class="ticket-card">
+    <i class="fas fa-ticket-alt ticket-icon"></i>
+    <div class="ticket-title">Online Ticket - 40 EGP</div>
+    <div class="ticket-description">
+      • Exclusive live streaming from inside the hall.<br>
+      • Watch all the TEDx talks in real time from anywhere.
+    </div>
+    <button class="buy-button">Book Now</button>
+  </div>
+</div>
+
+  <footer>
+    <p>
+      <a href="privacy-policy.html">Privacy Policy</a> |
+      <a href="terms-of-use.html">Terms of Use</a>
+      <a href="/About-us.html">Team</a> |
+    </p>
+    <p>&copy; 2025 TEDxYouth@October11th. All rights reserved.</p>
+    <p>This event is independently organized under a TED license.</p>
+  <div class="social-icons">
+  <a href="https://www.instagram.com/tedxyouthoctobe11stem" aria-label="Instagram" target="_blank">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://wa.me/201055485256" aria-label="WhatsApp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="mailto:tedxoct11@gmail.com" aria-label="Gmail" target="_blank">
+    <i class="fas fa-envelope"></i>
+  </a>
+  <a href="https://www.tiktok.com/@tedxyouthoctobe11stem" aria-label="TikTok" target="_blank">
+    <i class="fab fa-tiktok"></i>
+  </a>
+  <a href="https://www.facebook.com/TEDxYouthOctober11thSTEM" aria-label="Facebook" target="_blank">
+    <i class="fab fa-facebook"></i>
+  </a>
+</div>
+  </footer>
+</body>
+</html>

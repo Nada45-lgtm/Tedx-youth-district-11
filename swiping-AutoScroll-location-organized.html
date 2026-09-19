@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXULA EVENT 2025</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Michroma&family=Orbitron:wght@400..900&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      color: white;
+      line-height: 1.6;
+      background-color: #000;
+      font-family: 'Open Sans', sans-serif;
+    }
+    
+    /* Particles Background */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #000000;
+      z-index: -2;
+    }
+    
+    #particles-js::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+    
+    /* Header Styles */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.9rem 2rem;
+      background-color: rgba(0, 0, 0, 0.85);
+      font-family: 'Orbitron', sans-serif;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+    
+    header img {
+      height: 60px;
+      margin-bottom: 10px;
+    }
+    
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0.5rem 1rem;
+      transition: color 0.3s;
+      font-size: 15px;
+    }
+    
+    nav a.active:hover {
+      color: #a71212;
+    }
+    
+    .know-tedx-btn {
+      background: linear-gradient(135deg, #cd1e1e, #8f0707);
+      color: white;
+      font-weight: bold;
+      border-radius: 30px;
+      box-shadow: 0 0 8px #cd1e1e;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      padding: 0.365rem 1.2rem;
+    }
+    
+    .know-tedx-btn:hover {
+      background: black;
+      color: #ffffff;
+      border-color: #8b0606;
+      box-shadow: 0 0 15px #ff0000;
+    }
+    
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    /* Main Content */
+    .swiper-container {
+      width: 100%;
+      height: 100vh;
+      margin-top: 80px; /* To account for fixed header */
+    }
+    
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      overflow-y: auto;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      height: 100%;
+    }
+    
+    /* Hero Section */
+    .center {
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .center h1, .center p {
+      text-shadow: 0 0 5px black, 0 0 10px black;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 0.5rem;
+    }
+    
+    .date-location {
+      margin-bottom: 1rem;
+    }
+    
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      background-color: #E62B1E;
+      color: white;
+      padding: 0.8rem 1.6rem;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .btn:hover {
+      background-color: black;
+      color: #E62B1E;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #E62B1E;
+    }
+    
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid #E62B1E;
+      color: #E62B1E;
+    }
+    
+    .btn-outline:hover {
+      background-color: #E62B1E;
+      color: white;
+      box-shadow: 0 0 10px #E62B1E;
+    }
+    
+    /* Event Details */
+    .event-details {
+      padding: 3rem 1rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+    }
+    
+    .event-details h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #E62B1E;
+      text-shadow: 0 0 10px black;
+      font-family: 'Orbitron', sans-serif;
+    }
+    
+    .details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    
+    .details-icon {
+      display: flex;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 10px rgba(255, 0, 60, 0.2);
+      transition: transform 0.3s;
+    }
+    
+    .details-icon:hover {
+      transform: translateY(-5px);
+    }
+    
+    .details-icon i {
+      font-size: 1.5rem;
+      color: #E62B1E;
+      margin-right: 1rem;
+    }
+    
+    .details-left {
+      flex: 1;
+      min-width: 280px;
+    }
+    
+    .details-right {
+      width: 20rem;
+      height: 20rem;
+    }
+    
+    .details-right img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 0, 60, 0.4);
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .details-right img:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Speakers Section */
+    .speakers-section {
+      padding: 40px;
+      background-color: rgba(0, 0, 0, 0.7);
+      text-align: center;
+      position: relative;
+      border-radius: 12px;
+    }
+    
+    .speakers-section h2 {
+      margin-bottom: 20px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      color: #E62B1E;
+    }
+    
+    .speakers-container-wrapper {
+      position: relative;
+      max-width: 90%;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    
+    .speakers-container {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 10px;
+    }
+    
+    .speaker-card {
+      flex: 0 0 200px;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .speaker-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 4px 20px rgba(255, 0, 60, 0.3);
+    }
+    
+    .speaker-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    
+    .scroll-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 2;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    
+    .scroll-btn:hover {
+      opacity: 1;
+    }
+    
+    .scroll-btn.left {
+      left: 0;
+    }
+    
+    .scroll-btn.right {
+      right: 0;
+    }
+    
+    /* Location Section */
+    .location-section {
+      margin: 3rem 0;
+      padding: 2rem;
+      background: rgba(0,0,0,0.3);
+      border-radius: 12px;
+    }
+    
+    .location-section h2 {
+      text-align: center;
+      color: #E62B1E;
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+    
+    .location-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .location-text {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .location-text h3 {
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    
+    .location-text p {
+      color: #ddd;
+      line-height: 1.6;
+    }
+    
+    .map-container {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .map-container iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255,0,60,0.3);
+    }
+    
+    /* Sponsors Section */
+    .sponsors-section {
+      padding: 40px 20px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 12px;
+    }
+    
+    .sponsors-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #E62B1E;
+      font-family: 'Orbitron', sans-serif;
+    }
+    
+    .sponsors-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      overflow-x: auto;
+      padding: 10px 0;
+    }
+    
+    .sponsor-card {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 120px;
+      height: 80px;
+      transition: transform 0.3s;
+    }
+    
+    .sponsor-card:hover {
+      transform: scale(1.05);
+    }
+    
+    .sponsor-card img {
+      max-height: 60px;
+      max-width: 100%;
+      object-fit: contain;
+    }
+    
+    /* Partners Section */
+    .partners {
+      margin-top: 3rem;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 2rem;
+      border-radius: 12px;
+    }
+    
+    .partners h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: #E62B1E;
+      font-size: 2rem;
+    }
+    
+    .partner-logos-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    
+    .partner-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .partner-logo img {
+      height: 50px;
+      object-fit: contain;
+      max-width: 100px;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #000;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.9rem;
+    }
+    
+    footer a {
+      color: #dddddd;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    footer a:hover {
+      color: #ff0000;
+    }
+    
+    .social-icons {
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    
+    .social-icons a {
+      font-size: 1.2rem;
+      color: #dddddd;
+      transition: color 0.3s;
+    }
+    
+    .social-icons a:hover {
+      color: #E62B1E;
+    }
+    
+    /* Animations */
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    nav.show {
+      animation: slideDown 0.3s ease-in-out;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      
+      header {
+        height: 60px;
+        padding: 0.5rem 1rem;
+      }
+      
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        text-align: center;
+        padding: 1rem 0;
+      }
+      
+      nav.show {
+        display: flex;
+      }
+      
+      nav a {
+        font-size: 13px;
+        padding: 0.4rem 0.8rem;
+      }
+      
+      header img {
+        height: 55px;
+      }
+      
+      .swiper-container {
+        margin-top: 60px;
+      }
+      
+      .speaker-card {
+        flex: 0 0 80%;
+      }
+      
+      .sponsors-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 12px;
+        scroll-snap-type: x mandatory;
+      }
+      
+      .sponsor-card {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+      }
+      
+      .map-container iframe {
+        height: 250px;
+      }
+      
+      .center h1 {
+        font-size: 2rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .btn-group {
+        flex-direction: column;
+      }
+      
+      .btn {
+        width: 100%;
+      }
+      
+      .location-details {
+        flex-direction: column;
+      }
+      
+      .details {
+        flex-direction: column;
+      }
+      
+      .details-right {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <img src="logo_nav.png" alt="TEDx Logo">
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav id="main-nav">
+      <a href="#home" class="active">Home</a>
+      <a href="#about" class="active">About Us</a>
+      <a href="#articles" class="active">Articles</a>
+      <a href="#event" class="active">Our Event</a>
+      <a href="#signup" class="know-tedx-btn">What is TED<sup>x</sup></a>
+    </nav>
+  </header>
+  
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+  
+  <!-- Swiper Container for Sections -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <!-- Home Section -->
+      <div class="swiper-slide" id="home">
+        <div class="container">
+          <div class="center">
+            <h1>NEXULA EVENT 2025</h1>
+            <p class="date-location">August 5th 2025 – Educational City - 6th of October, Giza, Egypt</p>
+            <div class="btn-group">
+              <button class="btn" onclick="window.location.href='https://forms.gle/DdDmFXxur6MddShCA';">
+                BOOK YOUR TICKET NOW
+              </button>
+              <button class="btn btn-outline">SEE FULL AGENDA</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Event Details Section -->
+      <div class="swiper-slide" id="event">
+        <div class="container">
+          <div class="event-details">
+            <h2>EVENT DETAILS</h2>
+            <div class="details">
+              <div class="details-left">
+                <div class="details-icon">
+                  <i class="fa fa-calendar"></i>
+                  <div><strong>Date</strong><br>12:00 PM - August 05, 2025</div>
+                </div>
+                <div class="details-icon">
+                  <i class="fa fa-map-marker"></i>
+                  <div><strong>Location</strong><br>Educational City, 6th of October, Giza</div>
+                </div>
+                <div class="details-icon">
+                  <i class="fa fa-star"></i>
+                  <div><strong>Theme</strong><br>Where Ideas Meet the Stars</div>
+                </div>
+              </div>
+              <div class="details-right">
+                <img src="https://img.freepik.com/free-photo/audience-watching-show_53876-74872.jpg?w=1060" width="100%" style="border-radius: 12px;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Speakers Section -->
+      <div class="swiper-slide">
+        <div class="container">
+          <section class="speakers-section">
+            <h2>SPEAKERS</h2>
+            <div class="speakers-container-wrapper">
+              <button class="scroll-btn left" onclick="scrollSpeakers(-1)">&#10094;</button>
+
+              <div class="speakers-container" id="speakersContainer">
+                <div class="speaker-card">
+                  <img src="DR.Mohamed-Ismail.png" alt="Speaker 1">
+                  <h3>Speaker 1</h3>
+                  <p>AI Specialist</p>
+                </div>
+                <div class="speaker-card">
+                  <img src="Weaam-Mitwaly.png" alt="Speaker 2">
+                  <h3>Speaker 2</h3>
+                  <p>UX Designer</p>
+                </div>
+                <div class="speaker-card">
+                  <img src="https://via.placeholder.com/150" alt="Speaker 3">
+                  <h3>Speaker 3</h3>
+                  <p>DevOps Engineer</p>
+                </div>
+                <div class="speaker-card">
+                  <img src="https://via.placeholder.com/150" alt="Speaker 4">
+                  <h3>Speaker 4</h3>
+                  <p>Data Analyst</p>
+                </div>
+              </div>
+
+              <button class="scroll-btn right" onclick="scrollSpeakers(1)">&#10095;</button>
+            </div>
+          </section>
+        </div>
+      </div>
+      
+      <!-- Location Section -->
+      <div class="swiper-slide">
+        <div class="container">
+          <section class="location-section">
+            <h2>LOCATION</h2>
+            <div class="location-details">
+              <div class="location-text">
+                <h3><i class="fas fa-map-marker-alt" style="color: #E62B1E; margin-right: 8px;"></i>Educational City, 6th of October, Giza</h3>
+                <p>
+                  The event will be held at the main conference hall in Educational City, easily accessible by public transportation and private cars. Free parking is available.
+                </p>
+                <a href="https://maps.google.com/?q=Educational+City,+6th+of+October,+Giza" 
+                   target="_blank" 
+                   style="display: inline-block; margin-top: 1rem; background: #E62B1E; color: white; padding: 0.6rem 1.2rem; border-radius: 30px; text-decoration: none;">
+                  Open in Google Maps
+                </a>
+              </div>
+              <div class="map-container">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.678123456789!2d31.12345678901234!3d30.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDA3JzI0LjQiTiAzMcKwMDcnMjQuNCJF!5e0!3m2!1sen!2seg!4v1234567890123!5m2!1sen!2seg" 
+                  width="100%" 
+                  height="300" 
+                  style="border:0; border-radius: 12px; box-shadow: 0 0 15px rgba(255,0,60,0.3);" 
+                  allowfullscreen="" 
+                  loading="lazy">
+                </iframe>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      
+      <!-- Sponsors Section -->
+      <div class="swiper-slide">
+        <div class="container">
+          <section class="sponsors-section" id="sponsorsContainer">
+            <h2>OUR SPONSORS</h2>
+            <div class="sponsors-container">
+              <div class="sponsor-card"><img src="logo1.png" alt="Sponsor 1" /></div>
+              <div class="sponsor-card"><img src="logo2.png" alt="Sponsor 2" /></div>
+              <div class="sponsor-card"><img src="logo3.png" alt="Sponsor 3" /></div>
+              <div class="sponsor-card"><img src="logo4.png" alt="Sponsor 4" /></div>
+            </div>
+          </section>
+          
+          <!-- Partners Section -->
+          <div class="partners">
+            <h2>PARTNERS</h2>
+            <p>OFFICIAL COLLABORATION PARTNERS</p>
+            <div class="partner-logos-row">
+              <div class="partner-logo">
+                <img src="physics-club.png" alt="Physics Club Logo">
+                <p>Physics Club</p>
+              </div>
+              <div class="partner-logo">
+                <img src="partner2-logo.png" alt="Partner 2">
+                <p>Second Partner</p>
+              </div>
+              <div class="partner-logo">
+                <img src="partner3-logo.png" alt="Partner 3">
+                <p>Third Partner</p>
+              </div>
+              <div class="partner-logo">
+                <img src="partner4-logo.png" alt="Partner 4">
+                <p>Fourth Partner</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    
+    <!-- Add Navigation Buttons -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 TEDxYouth@October11th. All rights reserved. |
+    <a href="privacy-policy.html">Privacy Policy</a> |
+    <a href="terms-of-use.html">Terms of Use</a> |
+    <a href="/About-us.html">Team</a> |
+    <a href="mailto:tedx@gmail.com">Contact</a>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/tedxyouthoctober11stem?igsh=MXQ0MnZzcnVycnEwYg==" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/201055485256" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:tedxoct11@gmail.com" aria-label="Gmail" target="_blank"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.tiktok.com/@tedxyouthoctobe11stem" aria-label="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.facebook.com/share/14DpBMoeCdd/" aria-label="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    // Initialize Particles.js
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 150, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ff0000", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 6 }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": { "onclick": { "enable": true, "mode": "push" }, "resize": true },
+        "modes": { "push": { "particles_nb": 4 } }
+      },
+      "retina_detect": true
+    });
+
+    // Initialize Swiper
+    const swiper = new Swiper('.swiper-container', {
+      direction: 'vertical',
+      mousewheel: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      speed: 800,
+      effect: 'slide',
+      autoHeight: true,
+    });
+
+    // Toggle Mobile Menu
+    function toggleMenu() {
+      const nav = document.getElementById('main-nav');
+      const toggle = document.querySelector('.menu-toggle');
+      nav.classList.toggle('show');
+      toggle.classList.toggle('open');
+    }
+
+    // Scroll Speakers
+    function scrollSpeakers(direction) {
+      const container = document.getElementById('speakersContainer');
+      const scrollAmount = 300;
+      container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
+
+    // Auto-scroll for Speakers and Sponsors
+    function autoScroll(elementId, scrollAmount, intervalTime) {
+      const element = document.getElementById(elementId);
+      let isScrolling = true;
+
+      const scrollInterval = setInterval(() => {
+        if (isScrolling) {
+          element.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+          
+          if (element.scrollLeft + element.clientWidth >= element.scrollWidth) {
+            setTimeout(() => {
+              element.scrollTo({ left: 0, behavior: 'smooth' });
+            }, 1000);
+          }
+        }
+      }, intervalTime);
+
+      element.addEventListener('mouseenter', () => {
+        isScrolling = false;
+      });
+
+      element.addEventListener('mouseleave', () => {
+        isScrolling = true;
+      });
+    }
+
+    // Initialize auto-scrolling when page loads
+    window.addEventListener('DOMContentLoaded', () => {
+      autoScroll('speakersContainer', 1, 50);
+      autoScroll('sponsorsContainer', 1, 50);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>رحلتك الكونية تبدأ من هنا</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+    body {
+      background: radial-gradient(ellipse at center, #0d1b2a 0%, #000814 100%);
+      color: #e0e0e0;
+      font-family: 'Cairo', sans-serif;
+      text-align: center;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: #90e0ef;
+      text-shadow: 0 0 8px #48cae4;
+    }
+    .question, .result {
+      max-width: 600px;
+      margin: 1rem auto;
+      padding: 1.5rem;
+      background: rgba(14, 31, 55, 0.85);
+      border-radius: 12px;
+      box-shadow: 0 0 15px #48cae4;
+    }
+    h2 {
+      margin-bottom: 1rem;
+      color: #caf0f8;
+    }
+    button {
+      width: 100%;
+      background-color: #0077b6;
+      border: none;
+      padding: 12px 0;
+      margin: 0.6rem 0;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      color: white;
+      font-weight: 600;
+    }
+    button:hover {
+      background-color: #00b4d8;
+      box-shadow: 0 0 8px #00b4d8;
+    }
+    a.book-link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #90e0ef;
+      text-decoration: underline;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    a.book-link:hover {
+      color: #48cae4;
+    }
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      button {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>رحلتك الكونية تبدأ من هنا</h1>
+  <div id="quiz"></div>
+  <div id="result" class="result" style="display:none;"></div>
+
+  <script>
+    const quizContainer = document.getElementById('quiz');
+    const resultContainer = document.getElementById('result');
+
+    const questions = [
+      {
+        text: 'لما تواجه حاجة جديدة، أول رد فعلك؟',
+        options: [
+          { text: 'ألاحظ وأحلل بهدوء', type: 'A' },
+          { text: 'أجرب فورًا وأتعلم من الغلط', type: 'B' },
+          { text: 'أطلب نصيحة أو أشتغل مع فريق', type: 'C' },
+          { text: 'أدوّر على طريقة مبتكرة أواجه بيها الموقف', type: 'D' },
+        ]
+      },
+      {
+        text: 'إيه أكتر حاجة تهمك في شغلك أو مستقبلك؟',
+        options: [
+          { text: 'أفهم كل التفاصيل بعمق', type: 'A' },
+          { text: 'أعيش المغامرة واتعلم من التجربة', type: 'B' },
+          { text: 'أبني علاقات وأشتغل مع ناس', type: 'C' },
+          { text: 'أسيب بصمة بفكرة جديدة', type: 'D' },
+        ]
+      },
+      {
+        text: 'لو كنت في مركبة فضاء، تحب تكون...',
+        options: [
+          { text: 'مسؤول الأجهزة والأنظمة', type: 'A' },
+          { text: 'قائد مهمة الاستكشاف', type: 'B' },
+          { text: 'منسق الفريق الكوني', type: 'C' },
+          { text: 'المهندس المبتكر للطرق الجديدة', type: 'D' },
+        ]
+      }
+    ];
+
+    const results = {
+      A: {
+        title: 'المراقب الفضائي',
+        description: 'بتحب التحليل والتفكير الاستراتيجي، مثالي لورشة "صناعة القرارات الذكية" أو "إدارة الوقت في العالم المتسارع".'
+      },
+      B: {
+        title: 'المستكشف الكوني',
+        description: 'بتتعلم بالممارسة والتجربة، هتستمتع بورشة "فن تقديم الذات في دقيقة" أو "اتكلم بثقة: مهارات العرض والتواصل".'
+      },
+      C: {
+        title: 'منسق الطاقم',
+        description: 'شخص اجتماعي وقائد بالفطرة، ورشة "الذكاء العاطفي في بيئة العمل" أو "قيادة الفريق في زمن التغيير" هتكون مناسبة ليك.'
+      },
+      D: {
+        title: 'المهندس النجمي',
+        description: 'مبدع وبيفكر برا الصندوق، هتتألّق في ورشة "حل المشكلات بطريقة Design Thinking" أو "ريادة الأعمال للشباب".'
+      }
+    };
+
+    let currentQuestion = 0;
+    const counts = { A: 0, B: 0, C: 0, D: 0 };
+
+    function showQuestion() {
+      const q = questions[currentQuestion];
+      quizContainer.innerHTML = `
+        <div class="question">
+          <h2>${q.text}</h2>
+          ${q.options.map(opt => `<button onclick="answer('${opt.type}')">${opt.text}</button>`).join('')}
+        </div>`;
+    }
+
+    function answer(type) {
+      counts[type]++;
+      currentQuestion++;
+      if (currentQuestion < questions.length) {
+        showQuestion();
+      } else {
+        showResult();
+      }
+    }
+
+    function showResult() {
+      quizContainer.style.display = 'none';
+      const topType = Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0];
+      const r = results[topType];
+      resultContainer.style.display = 'block';
+      resultContainer.innerHTML = `
+        <h2>${r.title}</h2>
+        <p>${r.description}</p>
+        <a href="#" class="book-link" onclick="alert('هتتفتح صفحة الحجز قريبًا!')">احجز مكانك في المركبة</a>
+      `;
+    }
+
+    showQuestion();
+  </script>
+</body>
+</html>
