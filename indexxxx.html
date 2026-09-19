@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Footer Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      background-color: #2d2d2d;
+      font-family: Arial, sans-serif;
+      color: #ccc;
+    }
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 40px 20px 20px;
+      background-color: #2d2d2d;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 200px;
+      margin: 10px;
+    }
+
+    .footer-column h4 {
+      font-style: italic;
+      color: white;
+    }
+
+    .footer-column p,
+    .footer-column a {
+      color: #ccc;
+      font-size: 14px;
+      line-height: 1.6;
+      text-decoration: none;
+    }
+
+    .footer-column a:hover {
+      text-decoration: underline;
+    }
+
+    .our-team {
+      color: #9acd32;
+      font-weight: bold;
+    }
+
+    .logo-container img {
+      width: 120px;
+      height: auto;
+      margin-bottom: 15px;
+    }
+
+    .footer-links a {
+      display: block;
+      margin: 5px 0;
+    }
+
+    .icon {
+      margin-right: 8px;
+      color: #ccc;
+    }
+
+    .description {
+      margin-bottom: 10px;
+    }
+
+    .footer-bottom {
+      width: 100%;
+      text-align: center;
+      font-size: 13px;
+      color: #aaa;
+      margin-top: 30px;
+    }
+
+    .footer-bottom a {
+      color: #aaa;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .footer-bottom a:hover {
+      text-decoration: underline;
+    }
+    .footer-bottom {
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 13px;
+  color: #aaa;
+  line-height: 1.6;
+}
+.footer-bottom a {
+  color: #aaa;
+  text-decoration: none;
+  margin: 0 5px;
+}
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+    .copyright {
+      font-size: 12px;
+      text-align: center;
+      margin-top: 10px;
+      color: #888;
+    }
+
+    /* MEDIA QUERY */
+    @media (max-width: 768px) {
+      footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-column {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .logo-container img {
+        width: 100px;
+      }
+
+      .footer-bottom {
+        margin-top: 20px;
+      }
+
+      .footer-links a {
+        margin: 8px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<footer>
+  <div class="footer-column logo-column">
+    <div class="logo-container">
+      <img src="logoWithoutBG.png" alt="TEDxYouth@October11thSTEM Logo">
+    </div>
+    <p class="description">
+ TEDxYouth@October11th is an independently organized TED event <br>
+ that gives voice to young thinkers, dreamers, and change-makers.
+    <p class="our-team">Our Team</p>
+  </div>
+
+  <div class="footer-column">
+    <h4>Contact</h4>
+    <p><i class="fas fa-map-marker-alt icon"></i> قاعة اللؤلؤة شارع 10</p>
+    <p><i class="fas fa-phone icon"></i> +20 10 55485256</p>
+    <p><i class="fas fa-envelope icon"></i>
+      <a href="mailto:tedx@gmail.com">tedxoct11@gmail.com</a>
+    </p>
+    <p><i class="fab fa-whatsapp icon"></i>
+      <a href="https://whatsapp.com/channel/0029VbAdaVx59PwS36xwgG23" target="_blank">
+        Join our WhatsApp Channel
+      </a>
+    </p>
+  </div>
+
+  <div class="footer-column footer-links">
+    <h4>Links</h4>
+    <a href="#">Home</a>
+    <a href="#">Sign up</a>
+    <a href="#">About us</a>
+    <a href="#">Partners</a>
+
+<div class="footer-bottom">
+  <p style="font-size: 12px;">
+    <a href="privacy-policy.html">Privacy Policy</a> |
+    <a href="terms-of-use.html">Terms of Use</a>
+  </p>
+  <p style="font-size: 12px;">&copy; 2025 TEDxYouth@October11th. All rights reserved.</p>
+  <p style="font-size: 12px;">This independent TEDx event is operated under license from TED.</p>
+</div>
+</footer>
+
+</body>
+</html>

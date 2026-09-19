@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>رحلتك الكونية تبدأ من هنا</title>
+  <style>
+    body {
+      background: radial-gradient(ellipse at center, #1b2735 0%, #090a0f 100%);
+      color: #fff;
+      font-family: 'Cairo', sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+    .question, .result {
+      margin: 2rem auto;
+      max-width: 600px;
+      padding: 1rem;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    button {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.75rem;
+      font-size: 1rem;
+      background-color: #2e8bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <h1>رحلتك الكونية تبدأ من هنا</h1>
+  <div id="quiz"></div>
+  <div id="result" class="result hidden"></div>  <script>
+    const quizContainer = document.getElementById('quiz');
+    const resultContainer = document.getElementById('result');
+
+    const questions = [
+      {
+        text: 'لما تواجه حاجة جديدة، أول رد فعلك؟',
+        options: [
+          { text: 'ألاحظ وأحلل بهدوء', type: 'A' },
+          { text: 'أجرب فورًا وأتعلم من الغلط', type: 'B' },
+          { text: 'أطلب نصيحة أو أشتغل مع فريق', type: 'C' },
+          { text: 'أدوّر على طريقة مبتكرة أواجه بيها الموقف', type: 'D' },
+        ]
+      },
+      {
+        text: 'إيه أكتر حاجة تهمك في شغلك أو مستقبلك؟',
+        options: [
+          { text: 'أفهم كل التفاصيل بعمق', type: 'A' },
+          { text: 'أعيش المغامرة واتعلم من التجربة', type: 'B' },
+          { text: 'أبني علاقات وأشتغل مع ناس', type: 'C' },
+          { text: 'أسيب بصمة بفكرة جديدة', type: 'D' },
+        ]
+      },
+      {
+        text: 'لو كنت في مركبة فضاء، تحب تكون...',
+        options: [
+          { text: 'مسؤول الأجهزة والأنظمة', type: 'A' },
+          { text: 'قائد مهمة الاستكشاف', type: 'B' },
+          { text: 'منسق الفريق الكوني', type: 'C' },
+          { text: 'المهندس المبتكر للطرق الجديدة', type: 'D' },
+        ]
+      }
+    ];
+
+    const results = {
+      A: {
+        title: 'المراقب الفضائي',
+        description: 'بتحب التحليل والتفكير الاستراتيجي، مثالي لورشة "صناعة القرارات الذكية" أو "إدارة الوقت في العالم المتسارع".'
+      },
+      B: {
+        title: 'المستكشف الكوني',
+        description: 'بتتعلم بالممارسة والتجربة، هتستمتع بورشة "فن تقديم الذات في دقيقة" أو "اتكلم بثقة: مهارات العرض والتواصل".'
+      },
+      C: {
+        title: 'منسق الطاقم',
+        description: 'شخص اجتماعي وقائد بالفطرة، ورشة "الذكاء العاطفي في بيئة العمل" أو "قيادة الفريق في زمن التغيير" هتكون مناسبة ليك.'
+      },
+      D: {
+        title: 'المهندس النجمي',
+        description: 'مبدع وبيفكر برا الصندوق، هتتألّق في ورشة "حل المشكلات بطريقة Design Thinking" أو "ريادة الأعمال للشباب".'
+      }
+    };
+
+    let currentQuestion = 0;
+    const counts = { A: 0, B: 0, C: 0, D: 0 };
+
+    function showQuestion() {
+      const q = questions[currentQuestion];
+      quizContainer.innerHTML = `<div class="question"><h2>${q.text}</h2>
+        ${q.options.map((opt, i) => `<button onclick="answer('${opt.type}')">${opt.text}</button>`).join('')}
+      </div>`;
+    }
+
+    function answer(type) {
+      counts[type]++;
+      currentQuestion++;
+      if (currentQuestion < questions.length) {
+        showQuestion();
+      } else {
+        showResult();
+      }
+    }
+
+    function showResult() {
+      quizContainer.classList.add('hidden');
+      const topType = Object.entries(counts).sort((a,b) => b[1]-a[1])[0][0];
+      const r = results[topType];
+      resultContainer.classList.remove('hidden');
+      resultContainer.innerHTML = `<h2>${r.title}</h2><p>${r.description}</p><br><a href="#" style="color:#2e8bff;text-decoration:underline">احجز مكانك في المركبة</a>`;
+    }
+
+    showQuestion();
+  </script></body>
+</html>

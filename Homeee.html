@@ -1,0 +1,275 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEDxYouth STEM Oct 11th District</title>
+  <link rel="icon" href="icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/7fdd346d74.js" crossorigin="anonymous"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Lato', sans-serif;
+      background-color: #0e0e0e;
+      color: #fff;
+      scroll-behavior: smooth;
+      box-sizing: border-box;
+    }#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  z-index: -1;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.85);
+  position: relative;
+  z-index: 10;
+  flex-wrap: wrap;
+}
+
+header img {
+  height: 50px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ff1e1e;
+}
+
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.hero-text {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin-bottom: 2rem;
+  color: #cccccc;
+}
+
+.main-btn {
+  padding: 0.9rem 2rem;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #cd1e1e, #8f0707);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: 0.3s ease;
+}
+
+.main-btn:hover {
+  background: black;
+  border: 1px solid #ff1e1e;
+}
+
+.nexula-section {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.nexula-section h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.nexula-section p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+  color: #d4d4d4;
+}
+
+.nexula-image-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.nexula-image-grid img {
+  width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+footer {
+  background-color: #000;
+  color: white;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  margin-top: 0.5rem;
+}
+
+.footer-links a {
+  color: #ddd;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #ff0000;
+}
+
+.social-icons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-icons a {
+  color: #ccc;
+  font-size: 1.2rem;
+}
+
+.social-icons a:hover {
+  color: #ff1e1e;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #111;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 1rem;
+  }
+  nav.show {
+    display: flex;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>  <header>
+    <img src="logo_nav.png" alt="TEDx Logo">
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav id="main-nav">
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#articles">Articles</a>
+      <a href="#event">Event</a>
+    </nav>
+  </header>  <section class="hero" data-aos="fade-up">
+    <h1>Welcome to <span style="color: #cd1e1e;">NEXULA</span></h1>
+    <p class="hero-text">Where brilliant minds converge, and sparks of ideas create stars. TEDxYouth@Oct11 — designed to connect and ignite.</p>
+    <a href="#about" class="main-btn">Discover NEXULA</a>
+  </section>  <section class="nexula-section" id="about" data-aos="fade-up">
+    <h2>What is <span style="color: #cd1e1e;">NEXULA</span>?</h2>
+    <p>
+      A fusion of <strong>Nexus</strong> (connection) and <strong>Nebula</strong> (birth of stars). NEXULA is the launchpad of potential where youth ideas explode into brilliance.
+    </p>
+    <div class="nexula-image-grid">
+      <img src="nexus.jpg" alt="Nexus">
+      <img src="nebula.jpg" alt="Nebula">
+    </div>
+  </section>  <footer>
+    <div>&copy; 2025 TEDxYouth@October11th</div>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Terms of Use</a> |
+      <a href="#">Team</a> |
+      <a href="mailto:tedxoct11@gmail.com">Contact</a>
+    </div>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/tedxyouthoctober11stem" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/201055485256" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:tedxoct11@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.tiktok.com/@tedxyouthoctobe11stem" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.facebook.com/share/14DpBMoeCdd/" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+  </footer>  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script>
+    AOS.init();
+
+    function toggleMenu() {
+      document.getElementById('main-nav').classList.toggle('show');
+    }
+
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 100 },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.3 },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 120,
+          color: "#ff1e1e",
+          opacity: 0.5,
+          width: 1
+        },
+        move: { enable: true, speed: 2 }
+      },
+      interactivity: {
+        events: {
+          onclick: { enable: true, mode: "repulse" },
+          onhover: { enable: true, mode: "grab" }
+        },
+        modes: {
+          grab: { distance: 200, line_linked: { opacity: 0.6 } },
+          repulse: { distance: 100, duration: 0.4 }
+        }
+      },
+      retina_detect: true
+    });
+  </script></body>
+</html>
