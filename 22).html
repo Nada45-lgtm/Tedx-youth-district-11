@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXULA EVENT 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    #particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  z-index: -1;
+}
+  #particles-js::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); 
+  z-index: -1;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  line-height: 1.6;
+
+}
+    header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #000;
+  height: 80px;
+  font-family: 'Orbitron', sans-serif;
+  position: relative;
+  z-index: 10;
+  flex-wrap: wrap;
+}
+
+    header img {
+  height: 50px;
+  margin: 0;
+}
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+}
+
+    nav a.active:hover {
+      color: #a71212;
+    }
+
+        .menu-toggle {
+      display: none;
+      font-size: 26px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+.know-tedx-btn {
+  background: linear-gradient(135deg, #cd1e1e, #8f0707);
+  padding: 0.55rem 1.4rem;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 30px;
+  border: 2px solid transparent;
+  box-shadow: 0 0 8px #cd1e1e;
+  font-family: 'Orbitron', sans-serif;
+}
+        .know-tedx-btn:hover {
+      background: black;
+      color: #ffffff;
+      border-color: #8b0606;
+      box-shadow: 0 0 15px #ff0000;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  footer {
+      background-color: #000;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+
+    footer a {
+      color: #dddddd;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #ff0000;
+    }
+
+    .social-icons {
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .social-icons a {
+      font-size: 1.2rem;
+      color: #dddddd;
+    }
+
+      transform: scale(1.2);
+  color: #ff003c;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  header {
+  height: 60px;
+  padding: 0.5rem 1rem;
+}
+
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  nav a {
+  font-size: 13px;
+  padding: 0.4rem 0.8rem;
+}
+  
+  nav {
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-toggle {
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-toggle.open {
+  transform: rotate(90deg);
+}
+
+  header img {
+    height: 55px;
+  }
+}
+
+
+    .center {
+      text-align: center;
+    }
+  .center {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 12px;
+     }
+    h1 {
+      font-size: 2.5rem;
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 0.5rem;
+    }
+  .center h1, .center p {
+  text-shadow: 0 0 5px black, 0 0 10px black;
+}
+    .date-location {
+      margin-bottom: 1rem;
+    }
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+    .btn {
+  background-color: #E62B1E; 
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: black;
+  color: #E62B1E;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #E62B1E;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid #E62B1E;
+  color: #E62B1E;
+}
+
+.btn-outline:hover {
+  background-color: #E62B1E;
+  color: white;
+  box-shadow: 0 0 10px #E62B1E;
+}
+    
+    .event-details, .speakers, .sponsors-volunteer {
+      margin-top: 3rem;
+    }
+  
+  .event-details h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #E62B1E;
+  text-shadow: 0 0 10px black;
+  font-family: 'Orbitron', sans-serif;
+}
+  
+    .event-details {
+  padding: 3rem 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+   }
+  
+  .details-icon {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 10px rgba(255, 0, 60, 0.2);
+  transition: transform 0.3s;
+}
+.details-icon:hover {
+  transform: translateY(-5px);
+}
+
+.details-icon i {
+  font-size: 1.5rem;
+  color: #E62B1E;
+  margin-right: 1rem;
+}
+  
+    .details, .sponsors-volunteer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .details-left, .sponsors {
+      flex: 1;
+      min-width: 280px;
+    }
+    .details-left h2{
+      font-family:'Orbitron' ,"sans-serif"
+    }
+    .details-right {
+      width: 20rem;
+      height: 20rem;
+
+    }
+    .details-right img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 0, 60, 0.4);
+  transition: transform 0.3s ease-in-out;
+}
+.details-right img:hover {
+  transform: scale(1.05);
+}
+    .details-icon {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .details-icon i {
+      margin-right: 1rem;
+      font-size: 1.2rem;
+      color: #ff003c;
+    }
+    .speakers {
+      text-align: center;
+    }
+    .speaker-cards {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .card {
+      background-color: #121232;
+      padding: 1rem;
+      border-radius: 12px;
+      width: 250px;
+      text-align: center;
+    }
+    .card img {
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+    }
+    .card h4 {
+      margin: 0.5rem 0;
+    }
+    .see-more-btn {
+      margin-top: 1rem;
+      background-color: transparent;
+      border: 1px solid white;
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+  card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 4px 20px rgba(255, 0, 60, 0.3);
+}
+
+    .sponsor-logos {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .partners {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.partner-logos-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.partner-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.partner-logo img {
+  height: 50px;
+  object-fit: contain;
+  max-width: 100px;
+}
+  
+  @keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+nav.show {
+  animation: slideDown 0.3s ease-in-out;
+}
+  </style>
+</head>
+<body>
+      <header>
+      <img src="logo_nav.png" alt="TEDx Logo">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <nav id="main-nav">
+        <a href="#index.html" class="active">Home</a>
+        <a href="#Aboutus" class="active">About Us</a>
+        <a href="#Articles.html" class="active">Articles</a>
+        <a href="#tickets.html" class="active">Our Event</a>
+        <a href="#signup.html" class="know-tedx-btn">What is TED<sup>x</sup></a>
+      </nav>
+    </header>
+  <div id="particles-js"></div>
+  <div class="container">
+    <div class="center">
+      <h1>NEXULA EVENT 2025</h1>
+      <p class="date-location">September 21st – October 1st, Cairo, Egypt</p>
+      <div class="btn-group">
+        <button class="btn" onclick="window.location.href='https://forms.gle/DdDmFXxur6MddShCA';">
+  BOOK YOUR TICKET NOW
+</button>
+        <button class="btn btn-outline">SEE FULL AGENDA</button>
+      </div>
+    </div>
+
+    <div class="event-details">
+      <h2>EVENT DETAILS</h2>
+      <div class="details">
+        <div class="details-left">
+          <div class="details-icon">
+            <i class="fa fa-calendar"></i>
+            <div><strong>Date</strong><br>Augaust 03, 2025</div>
+          </div>
+          <div class="details-icon">
+            <i class="fa fa-map-marker"></i>
+            <div><strong>Location</strong><br>Educational City, 6th of October, Giza</div>
+          </div>
+          <div class="details-icon">
+            <i class="fa fa-star"></i>
+            <div><strong>Theme</strong><br>Where Ideas Meet the Stars</div>
+          </div>
+        </div>
+        <div class="details-right">
+          <img src="https://img.freepik.com/free-photo/audience-watching-show_53876-74872.jpg?w=1060" width="100%" style="border-radius: 12px;">
+        </div>
+      </div>
+    </div>
+
+    <div class="speakers">
+      <h2>SPEAKERS</h2>
+      <div class="speaker-cards">
+        <div class="card">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr Kareem">
+          <h4>Dr. Salma El-Sherbieny</h4>
+          <p>DENTEST</p>
+          <p>the topic of her talk in the event</p>
+          <button class="see-more-btn">SEE MORE</button>
+        </div>
+        <div class="card">
+          <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sara Youssef">
+          <h4>Speaker</h4>
+          <p>his field</p>
+          <p>Topic of his talk in the event</p>
+          <button class="see-more-btn">SEE MORE</button>
+        </div>
+        <div class="card">
+          <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Yaesin">
+          <h4>Speaker</h4>
+          <p>his field</p>
+          <p>Topic of his talk in the event</p>
+          <button class="see-more-btn">SEE MORE</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="sponsors-volunteer">
+      <div class="sponsors">
+  <h2>SPONSORS</h2>
+  <p>PREMIUM SPONSORS</p>
+  <div class="sponsor-logos-row">
+    <div class="sponsor-logo">
+      <img src="sponsor1-logo.png" alt="Sponsor 1">
+      <p>First Sponsor</p>
+    </div>
+    <div class="sponsor-logo">
+      <img src="sponsor2-logo.png" alt="Sponsor 2">
+      <p>Second Sponsor</p>
+    </div>
+    <div class="sponsor-logo">
+      <img src="sponsor3-logo.png" alt="Sponsor 3">
+      <p>Third Sponsor</p>
+    </div>
+    <div class="sponsor-logo">
+      <img src="sponsor4-logo.png" alt="Sponsor 4">
+      <p>Fourth Sponsor</p>
+    </div>
+  </div>
+</div>
+      </div>
+      <div class="partners">
+  <h2>PARTNERS</h2>
+  <p>OFFICIAL COLLABORATION PARTNERS</p>
+  <div class="partner-logos-row">
+    <div class="partner-logo">
+      <img src="partner1-logo.png" alt="Partner 1">
+      <p>First Partner</p>
+    </div>
+    <div class="partner-logo">
+      <img src="partner2-logo.png" alt="Partner 2">
+      <p>Second Partner</p>
+    </div>
+    <div class="partner-logo">
+      <img src="partner3-logo.png" alt="Partner 3">
+      <p>Third Partner</p>
+    </div>
+    <div class="partner-logo">
+      <img src="partner4-logo.png" alt="Partner 4">
+      <p>Fourth Partner</p>
+    </div>
+</div>
+</div>
+    </div>
+  </div>
+  <footer>
+    &copy; 2025 TEDxYouth@October11th. All rights reserved. |
+    <a href="privacy-policy.html">Privacy Policy</a> |
+    <a href="terms-of-use.html">Terms of Use</a> |
+    <a href="/About-us.html">Team</a> |
+    <a href="mailto:tedx@gmail.com">Contact</a>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/tedxyouthoctober11stem?igsh=MXQ0MnZzcnVycnEwYg==" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/201055485256" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:tedxoct11@gmail.com" aria-label="Gmail" target="_blank"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.tiktok.com/@tedxyouthoctobe11stem" aria-label="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.facebook.com/share/14DpBMoeCdd/" aria-label="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": { "value": 150, "density": { "enable": true, "value_area": 800 } },
+      "color": { "value": "#ffffff" },
+      "shape": { "type": "circle" },
+      "opacity": { "value": 0.5 },
+      "size": { "value": 3, "random": true },
+      "line_linked": { "enable": true, "distance": 150, "color": "#ff0000", "opacity": 0.4, "width": 1 },
+      "move": { "enable": true, "speed": 6 }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": { "onclick": { "enable": true, "mode": "push" }, "resize": true },
+      "modes": { "push": { "particles_nb": 4 } }
+    },
+    "retina_detect": true
+  });
+
+
+  function toggleMenu() {
+    document.getElementById('main-nav').classList.toggle('show');
+  }
+  function toggleMenu() {
+  const nav = document.getElementById('main-nav');
+  const toggle = document.querySelector('.menu-toggle');
+  nav.classList.toggle('show');
+  toggle.classList.toggle('open');
+}
+
+</script>
+
+</body>
+</html>

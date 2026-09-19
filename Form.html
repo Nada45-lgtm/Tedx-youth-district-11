@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket Booking Form</title>
+  <style>
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: Helvetica, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      color: #EB0028;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      border: 2px solid #EB0028;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: Helvetica, sans-serif;
+    }
+    .radio-group {
+      margin-top: 10px;
+    }
+    .radio-group input[type="radio"] {
+      margin-right: 10px;
+    }
+    button[type="submit"] {
+      background-color: #EB0028;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover {
+      background-color: #c60020;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ticket Booking Form</h1>
+  <form>
+    <label for="first-name">الاسم الأول</label>
+    <input type="text" id="first-name" name="First Name" placeholder="First Name" required>
+
+    <label for="last-name">الاسم الأخير</label>
+    <input type="text" id="last-name" name="Last Name" placeholder="Last Name" required>
+
+    <label for="gender">النوع - Gender</label>
+    <input type="text" id="gender" name="Gender" placeholder="Gender" required>
+
+    <label for="governorate">المحافظة - Governorate</label>
+    <input type="email" id="governorate" name="Governorate" placeholder="Governorate" required>
+
+    <label for="age">السن - Age</label>
+    <input type="number" id="age" name="Age" placeholder="Age" required>
+
+    <label>نوع الشخصية - Personality Type</label>
+    <div class="radio-group">
+      <label><input type="radio" name="personality" value="The Star Engineer" required> البشمهندس النجمي - The Star Engineer</label>
+      <label><input type="radio" name="personality" value="Space Observer"> المراقب الفضائي - Space Observer</label>
+      <label><input type="radio" name="personality" value="Crew Coordinator"> منسق الطاقم - Crew Coordinator</label>
+      <label><input type="radio" name="personality" value="Cosmic Explorer"> المستكشف الكوني - Cosmic Explorer</label>
+    </div>
+
+    <label for="ticket_type">نوع التذكرة</label>
+    <select id="ticket_type" name="ticket_type" required>
+      <option value="">-- Select Ticket Type --</option>
+      <option value="online">Online Ticket</option>
+      <option value="early_bird">Early Bird</option>
+      <option value="regular">Regular Ticket</option>
+    </select>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

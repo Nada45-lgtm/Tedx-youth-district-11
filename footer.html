@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clean Footer with Red Accent</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      background-color: #2d2d2d;
+      font-family: Arial, sans-serif;
+      color: #ccc;
+    }
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 30px 20px 10px;
+      background-color: #2d2d2d;
+      border-top: 1px solid #444;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 180px;
+      margin: 10px;
+    }
+
+    .footer-column h4 {
+      color: #e50914;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .footer-column p,
+    .footer-column a {
+      color: #bbb;
+      font-size: 14px;
+      text-decoration: none;
+      line-height: 1.6;
+    }
+
+    .footer-column a:hover {
+      color: #e50914;
+      text-decoration: underline;
+    }
+
+    .icon {
+      margin-right: 6px;
+      color: #aaa;
+    }
+
+    .footer-bottom {
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+      color: #888;
+      margin-top: 20px;
+      line-height: 1.5;
+    }
+
+    .footer-bottom a {
+      color: #888;
+      margin: 0 4px;
+      text-decoration: none;
+    }
+
+    .footer-bottom a:hover {
+      color: #e50914;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-column {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<footer>
+  <div class="footer-column">
+    <h4>Contact</h4>
+    <p><i class="fas fa-map-marker-alt icon"></i> قاعة اللؤلؤة - شارع 10</p>
+    <p><i class="fas fa-phone icon"></i> +000000000000</p>
+    <p><i class="fas fa-envelope icon"></i> <a href="mailto:tedx@gmail.com">tedx@gmail.com</a></p>
+    <p><i class="fab fa-whatsapp icon"></i> <a href="https://whatsapp.com/channel/0000000000000000" target="_blank">Join WhatsApp</a></p>
+  </div>
+
+  <div class="footer-column">
+    <h4>Quick Links</h4>
+    <a href="#">Home</a><br>
+    <a href="#">Sign up</a><br>
+    <a href="#">About us</a><br>
+    <a href="#">Partners</a>
+  </div>
+
+  <div class="footer-bottom">
+    <p>
+      <a href="privacy-policy.html">Privacy Policy</a> |
+      <a href="terms-of-use.html">Terms of Use</a>
+    </p>
+    <p>&copy; 2025 TEDxYouth@October11th. All rights reserved.</p>
+    <p>Operated under license from TED.</p>
+  </div>
+</footer>
+
+</body>
+</html>

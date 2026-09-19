@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXULA EVENT 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=block" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <style>
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #000000;
+      z-index: -1;
+    }
+    #particles-js::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6); 
+      z-index: -1;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      color: white;
+      line-height: 1.6;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.9rem 2rem;
+      background-color: rgba(0, 0, 0, 0.85);
+      font-family: 'Orbitron', sans-serif;
+      position: relative;
+      z-index: 10;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0.5rem 1rem;
+      transition: color 0.3s;
+      font-size: 15px;
+    }
+
+    nav a.active:hover {
+      color: #a71212;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .know-tedx-btn {
+      background: linear-gradient(135deg, #cd1e1e, #8f0707);
+      color: white;
+      font-weight: bold;
+      border-radius: 30px;
+      box-shadow: 0 0 8px #cd1e1e;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      padding: 0.365rem 1.2rem;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .know-tedx-btn:hover {
+      background: black;
+      color: #ffffff;
+      border-color: #8b0606;
+      box-shadow: 0 0 15px #ff0000;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    footer {
+      background-color: #000;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+
+    footer a {
+      color: #dddddd;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #ff0000;
+    }
+
+    .social-icons {
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .social-icons a {
+      font-size: 1.2rem;
+      color: #dddddd;
+    }
+
+    .center {
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 2rem;
+      border-radius: 12px;
+    }
+    
+    .center h1, .center p {
+      text-shadow: 0 0 5px black, 0 0 10px black;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 0.5rem;
+    }
+  
+    h2, h3 {
+      font-family: 'Orbitron', sans-serif;
+    }
+  
+    p {
+      font-family: 'Poppins', sans-serif;
+    }
+  
+    .date-location {
+      margin-bottom: 1rem;
+    }
+    
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      background-color: #E62B1E; 
+      color: white;
+      padding: 0.8rem 1.6rem;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .btn:hover {
+      background-color: black;
+      color: #E62B1E;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #E62B1E;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid #E62B1E;
+      color: #E62B1E;
+    }
+
+    .btn-outline:hover {
+      background-color: #E62B1E;
+      color: white;
+      box-shadow: 0 0 10px #E62B1E;
+    }
+    
+    .event-details, .speakers, .sponsors-volunteer {
+      margin-top: 3rem;
+    }
+  
+    .event-details h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #E62B1E;
+      text-shadow: 0 0 10px black;
+      font-family: 'oribtron', sans-serif;
+    }
+  
+    .event-details {
+      padding: 3rem 1rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+    }
+
+    .card {
+      transition: all 0.3s ease;
+      transform-style: preserve-3d;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 20px 30px rgba(255, 0, 60, 0.3);
+    }
+
+    .btn {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: rgba(255,255,255,0.1);
+      transform: rotate(45deg);
+    }
+  
+    .details-icon {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 10px rgba(255, 0, 60, 0.2);
+      transition: transform 0.3s;
+    }
+    
+    .details-icon:hover {
+      transform: translateY(-5px);
+    }
+
+    .details-icon i {
+      font-size: 1.5rem;
+      color: #E62B1E;
+      margin-right: 1rem;
+    }
+  
+    .details, .sponsors-volunteer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    
+    .premium-sponsors {
+      padding: 4rem 0;
+      background: rgba(0,0,0,0.7);
+      position: relative;
+    }
+
+    .premium-sponsors h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #E62B1E;
+      font-family: 'Orbitron', sans-serif;
+      text-shadow: 0 0 10px rgba(230,43,30,0.5);
+    }
+
+    .logo-carousel {
+      width: 100%;
+      padding: 2rem 0;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s;
+    }
+
+    .swiper-slide img {
+      max-width: 180px;
+      max-height: 80px;
+      object-fit: contain;
+      filter: grayscale(100%) brightness(1.5);
+      transition: all 0.3s;
+    }
+
+    .swiper-slide:hover img {
+      filter: none;
+      transform: scale(1.1);
+    }
+    
+    .details-left, .sponsors {
+      flex: 1;
+      min-width: 280px;
+    }
+    
+    .details-left h2 {
+      font-family:'Poppins', sans-serif;
+    }
+    
+    .details-right {
+      width: 20rem;
+      height: 20rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 0, 60, 0.4);
+      transition: transform 0.3s ease-in-out;
+      display: block;
+    }
+    
+    .details-right img:hover {
+      transform: scale(1.05);
+    }
+    
+    .speakers-section {
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      text-align: center;
+      position: relative;
+    }
+
+    .speakers-section h2 {
+      margin-bottom: 20px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 28px;
+    }
+
+    .speakers-container-wrapper {
+      position: relative;
+      max-width: 90%;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .speakers-container {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 10px;
+    }
+
+    .speaker-card {
+      flex: 0 0 200px;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .speaker-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 4px 20px rgba(255, 0, 60, 0.3);
+    }
+
+    .speaker-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    /* Workshops Section */
+    .workshops-section {
+      padding: 4rem 1rem;
+      background-color: rgba(20, 20, 40, 0.8);
+      margin-top: 3rem;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #E62B1E;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .workshops-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .workshop-card {
+      background: #121232;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(230, 43, 30, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .workshop-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .workshop-header {
+      padding: 1.5rem;
+      background: rgba(230, 43, 30, 0.1);
+      border-bottom: 1px solid #E62B1E;
+    }
+
+    .workshop-time {
+      display: block;
+      color: #E62B1E;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .workshop-body {
+      padding: 1.5rem;
+    }
+
+    .workshop-instructor {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .workshop-instructor img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+      object-fit: cover;
+    }
+
+    .workshop-benefits {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .workshop-benefits li {
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .workshop-benefits i {
+      color: #E62B1E;
+      margin-right: 5px;
+    }
+
+    .workshop-footer {
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.3);
+    }
+
+    .workshop-seats {
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+
+    .workshop-btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      background: #E62B1E;
+    }
+
+    .workshops-cta {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .scroll-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .scroll-btn.left {
+      left: 0;
+    }
+
+    .scroll-btn.right {
+      right: 0;
+    }
+    
+    .see-more-btn {
+      margin-top: 1rem;
+      background-color: transparent;
+      border: 1px solid white;
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+    
+    .sponsor-logos {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    
+    .partners {
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .partner-logos-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .partner-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .partner-logo img {
+      height: 50px;
+      object-fit: contain;
+      max-width: 100px;
+    }
+  
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    nav.show {
+      animation: slideDown 0.3s ease-in-out;
+    }
+    
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      
+      header {
+        height: 60px;
+        padding: 0.5rem 1rem;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        text-align: center;
+        padding: 1rem 0;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      nav a {
+        font-size: 13px;
+        padding: 0.4rem 0.8rem;
+      }
+      
+      header img {
+        height: 55px;
+      }
+      
+      .speaker-card {
+        flex: 0 0 80%;
+      }
+      
+      .sponsors-carousel {
+        overflow: hidden;
+        padding: 3rem 0;
+        background: rgba(0,0,0,0.7);
+        position: relative;
+      }
+
+      .sponsors-carousel h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #E62B1E;
+        font-family: 'Orbitron', sans-serif;
+      }
+
+      .logo-track {
+        position: relative;
+        width: 100%;
+        mask: linear-gradient(90deg, 
+          transparent, 
+          white 20%, 
+          white 80%, 
+          transparent
+        );
+      }
+
+      .logo-slide {
+        display: flex;
+        gap: 3rem;
+        width: max-content;
+        animation: scroll 30s linear infinite;
+      }
+
+      .logo-slide img {
+        height: 60px;
+        object-fit: contain;
+        filter: grayscale(100%) brightness(2);
+        transition: all 0.3s;
+      }
+
+      .logo-slide img:hover {
+        filter: none;
+        transform: scale(1.1);
+      }
+
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <header>
+    <img src="logo_nav.png" alt="TEDx Logo">
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav id="main-nav">
+      <a href="#index.html" class="active">Home</a>
+      <a href="#Aboutus" class="active">About Us</a>
+      <a href="#Articles.html" class="active">Articles</a>
+      <a href="#tickets.html" class="active">Our Event</a>
+      <a href="#signup.html" class="know-tedx-btn">What is TED<sup>x</sup></a>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <div class="center">
+      <h1>NEXULA EVENT 2025</h1>
+      <p class="date-location">August 5th 2025 – Educational City - 6th of October, Giza, Egypt</p>
+      <div class="btn-group">
+        <button class="btn" onclick="window.location.href='https://forms.gle/DdDmFXxur6MddShCA';">
+          BOOK YOUR TICKET NOW
+        </button>
+        <button class="btn btn-outline">SEE FULL AGENDA</button>
+      </div>
+    </div>
+
+    <div class="event-details">
+      <h2>EVENT DETAILS</h2>
+      <div class="details">
+        <div class="details-left">
+          <div class="details-icon">
+            <i class="fa fa-calendar"></i>
+            <div><strong>Date</strong><br>12:00 PM - Augaust 05, 2025</div>
+          </div>
+          <div class="details-icon">
+            <i class="fa fa-map-marker"></i>
+            <div><strong>Location</strong><br>Educational City, 6th of October, Giza</div>
+          </div>
+          <div class="details-icon">
+            <i class="fa fa-star"></i>
+            <div><strong>Theme</strong><br>Where Ideas Meet the Stars</div>
+          </div>
+        </div>
+        <div class="details-right">
+          <img src="https://img.freepik.com/free-photo/audience-watching-show_53876-74872.jpg?w=1060" width="100%" style="border-radius: 12px;">
+        </div>
+      </div>
+    </div>
+
+    <section class="speakers-section">
+      <h2>SPEAKERS</h2>
+      <div class="speakers-container-wrapper">
+        <button class="scroll-btn left" onclick="scrollSpeakers(-1)">&#10094;</button>
+
+        <div class="speakers-container" id="speakersContainer">
+          <div class="speaker-card">
+            <img src="DR.Mohamed-Ismail.png" alt="Speaker 1">
+            <h3>Speaker 1</h3>
+            <p>AI Specialist</p>
+          </div>
+          <div class="speaker-card">
+            <img src="Weaam-Mitwaly.png" alt="Speaker 2">
+            <h3>Osama Elzero</h3>
+            <p>UX Designer</p>
+          </div>
+          <div class="speaker-card">
+            <img src="https://via.placeholder.com/150" alt="Speaker 3">
+            <h3>DR.Mohamed Ismail</h3>
+            <p>DevOps Engineer</p>
+          </div>
+          <div class="speaker-card">
+            <img src="https://via.placeholder.com/150" alt="Speaker 4">
+            <h3>Weaam Mitwaly</h3>
+            <p>Data Analyst</p>
+          </div>
+          <div class="speaker-card">
+            <img src="https://via.placeholder.com/150" alt="Speaker 3">
+            <h3>Shehab Mahmoud</h3>
+            <p>Content Creator</p>
+          </div>
+          <div class="speaker-card">
+            <img src="https://via.placeholder.com/150" alt="Speaker 3">
+            <h3>Dr.Salma Elsherbiny</h3>
+            <p>Content Creator</p>
+          </div>
+        </div>
+
+        <button class="scroll-btn right" onclick="scrollSpeakers(1)">&#10095;</button>
+      </div>
+    </section>
+    
+    <section class="workshops-section">
+      <div class="container">
+        <h2>EVENT WORKSHOPS</h2>
+        <p class="section-subtitle">Hands-on learning experiences with industry experts</p>
+        
+        <div class="workshops-grid">
+          <!-- Workshop 1 -->
+          <div class="workshop-card">
+            <div class="workshop-header">
+              <span class="workshop-time">Day 1 | 2:00 PM - 4:00 PM</span>
+              <h3>AI Applications in Modern Business</h3>
+            </div>
+            <div class="workshop-body">
+              <div class="workshop-instructor">
+                <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Instructor">
+                <span>Dr. Ahmed Khalil</span>
+              </div>
+              <p>Practical workshop on implementing AI solutions in business operations with case studies.</p>
+              <ul class="workshop-benefits">
+                <li><span class="material-icons-outlined" aria-hidden="true" style="vertical-align: middle; color: #E62B1E;">check_circle</span> Certificate of Participation</li>
+                <li><span class="material-icons-outlined" aria-hidden="true" style="vertical-align: middle; color: #E62B1E;">check_circle</span> Networking Session</li>
+              </ul>
+            </div>
+            <div class="workshop-footer">
+              <span class="workshop-seats">Limited to 30 participants</span>
+              <button class="btn workshop-btn">Reserve Your Spot</button>
+            </div>
+          </div>
+
+          <!-- Workshop 2 -->
+          <div class="workshop-card">
+            <div class="workshop-header">
+              <span class="workshop-time">Day 2 | 11:00 AM - 1:00 PM</span>
+              <h3>Blockchain Fundamentals</h3>
+            </div>
+            <div class="workshop-body">
+              <div class="workshop-instructor">
+                <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Instructor">
+                <span>Eng. Nada Salem</span>
+              </div>
+              <p>Interactive session on blockchain technology and smart contract development.</p>
+              <ul class="workshop-benefits">
+                <li><span class="material-icons-outlined" aria-hidden="true" style="vertical-align: middle; color: #E62B1E;">check_circle</span> Hands-on Exercises</li>
+                <li><span class="material-icons-outlined" aria-hidden="true" style="vertical-align: middle; color: #E62B1E;">check_circle</span> Resource Kit</li>
+              </ul>
+            </div>
+            <div class="workshop-footer">
+              <span class="workshop-seats">Limited to 25 participants</span>
+              <button class="btn workshop-btn">Reserve Your Spot</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="workshops-cta">
+          <p>All workshops require separate registration</p>
+          <button class="btn btn-outline">View Full Workshop Schedule</button>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Sponsors Section (additional sponsors) -->
+<section class="premium-sponsors">
+  <div class="container">
+    <h2 class="section-title">OUR PREMIUM SPONSORS</h2>
+    <p class="section-subtitle">We gratefully acknowledge our visionary partners</p>
+    
+    <div class="swiper sponsor-swiper">
+      <div class="swiper-wrapper">
+        <!-- Sponsor 1 -->
+        <div class="swiper-slide sponsor-slide">
+          <div class="sponsor-logo-container">
+            <img src="assets/sponsors/microsoft.png" alt="Microsoft" class="sponsor-logo">
+            <div class="sponsor-tooltip">Microsoft - Platinum Sponsor</div>
+          </div>
+        </div>
+        
+        <!-- Sponsor 2 -->
+        <div class="swiper-slide sponsor-slide">
+          <div class="sponsor-logo-container">
+            <img src="assets/sponsors/google.png" alt="Google" class="sponsor-logo">
+            <div class="sponsor-tooltip">Google - Innovation Partner</div>
+          </div>
+        </div>
+        
+        <!-- Sponsor 3 -->
+        <div class="swiper-slide sponsor-slide">
+          <div class="sponsor-logo-container">
+            <img src="assets/sponsors/ibm.png" alt="IBM" class="sponsor-logo">
+            <div class="sponsor-tooltip">IBM - Technology Sponsor</div>
+          </div>
+        </div>
+        
+        <!-- Sponsor 4 -->
+        <div class="swiper-slide sponsor-slide">
+          <div class="sponsor-logo-container">
+            <img src="assets/sponsors/intel.png" alt="Intel" class="sponsor-logo">
+            <div class="sponsor-tooltip">Intel - Hardware Partner</div>
+          </div>
+        </div>
+        
+        <!-- Sponsor 5 -->
+        <div class="swiper-slide sponsor-slide">
+          <div class="sponsor-logo-container">
+            <img src="assets/sponsors/oracle.png" alt="Oracle" class="sponsor-logo">
+            <div class="sponsor-tooltip">Oracle - Database Sponsor</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Pagination (optional) -->
+      <div class="swiper-pagination"></div>
+    </div>
+    
+    <!-- Sponsor Categories -->
+    <div class="sponsor-categories">
+      <div class="category">
+        <span class="category-dot platinum"></span>
+        <span>Platinum Sponsors</span>
+      </div>
+      <div class="category">
+        <span class="category-dot gold"></span>
+        <span>Gold Sponsors</span>
+      </div>
+      <div class="category">
+        <span class="category-dot silver"></span>
+        <span>Silver Sponsors</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Partners Section -->
+<div class="partners">
+  <h2>PARTNERS</h2>
+  <p>OFFICIAL COLLABORATION PARTNERS</p>
+  <div class="partner-logos-row">
+    <div class="partner-logo">
+      <img src="physics-club.png" alt="Physics Club Logo">
+      <p>Physics Club</p>
+    </div>
+    <div class="partner-logo">
+      <img src="partner2-logo.png" alt="Partner 2">
+      <p>Second Partner</p>
+    </div>
+    <div class="partner-logo">
+      <img src="partner3-logo.png" alt="Partner 3">
+      <p>Third Partner</p>
+    </div>
+    <div class="partner-logo">
+      <img src="partner4-logo.png" alt="Partner 4">
+      <p>Fourth Partner</p>
+    </div>
+  </div>
+</div>
+
+<!-- Location Section -->
+<section class="location-section">
+  <div class="container">
+    <h2>Event Location</h2>
+    <div class="location-grid">
+      <div class="location-info">
+        <h3>Educational City, 6th of October, Giza</h3>
+        <p><span class="material-icons-outlined" aria-hidden="true">access_time</span> From 12 PM to 8 PM</p>
+        <p><span class="material-icons-outlined" aria-hidden="true">directions</span> Free parking available</p>
+        <p><span class="material-icons-outlined" aria-hidden="true">subway</span> Nearest metro station: El-Moneeb Station</p>
+        <p><span class="material-icons-outlined" aria-hidden="true">directions_bus</span> Free shuttle buses provided</p>
+      </div>
+      <div class="location-map">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.769920282049!2d31.0191233151159!3d30.07255898187438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDA0JzIxLjIiTiAzMcKwMDEnMDkuOSJF!5e0!3m2!1sen!2seg!4v1620000000000!5m2!1sen!2seg" 
+          width="100%" 
+          height="400" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>&copy; 2025 TEDxYouth@October11th. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-use.html">Terms of Use</a>
+      <a href="About-us.html">Team</a>
+      <a href="mailto:tedx@gmail.com">Contact</a>
+    </div>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/tedxyouthoctober11stem?igsh=MXQ0MnZzcnVycnEwYg==" aria-label="Instagram" target="_blank">
+        <span class="material-icons-outlined">instagram</span>
+      </a>
+      <a href="https://wa.me/201055485256" aria-label="WhatsApp" target="_blank">
+        <span class="material-icons-outlined">whatsapp</span>
+      </a>
+      <a href="mailto:tedxoct11@gmail.com" aria-label="Gmail" target="_blank">
+        <span class="material-icons-outlined">email</span>
+      </a>
+      <a href="https://www.tiktok.com/@tedxyouthoctobe11stem" aria-label="TikTok" target="_blank">
+        <span class="material-icons-outlined">tiktok</span>
+      </a>
+      <a href="https://www.facebook.com/share/14DpBMoeCdd/" aria-label="Facebook" target="_blank">
+        <span class="material-icons-outlined">facebook</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+  // Particles.js configuration
+  particlesJS("particles-js", {
+    "particles": {
+      "number": { "value": 150, "density": { "enable": true, "value_area": 800 } },
+      "color": { "value": "#ffffff" },
+      "shape": { "type": "circle" },
+      "opacity": { "value": 0.5 },
+      "size": { "value": 3, "random": true },
+      "line_linked": { "enable": true, "distance": 150, "color": "#ff0000", "opacity": 0.4, "width": 1 },
+      "move": { "enable": true, "speed": 6 }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": { "onclick": { "enable": true, "mode": "push" }, "resize": true },
+      "modes": { "push": { "particles_nb": 4 } }
+    },
+    "retina_detect": true
+  });
+
+  // Menu toggle function
+  function toggleMenu() {
+    const nav = document.getElementById('main-nav');
+    const toggle = document.querySelector('.menu-toggle');
+    nav.classList.toggle('show');
+    toggle.classList.toggle('open');
+  }
+
+  // Speakers scroll function
+  function scrollSpeakers(direction) {
+    const container = document.getElementById('speakersContainer');
+    const scrollAmount = 300;
+    container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+  }
+
+  // Countdown timer
+  const countdown = () => {
+    const endDate = new Date("August 03, 2025 00:00:00").getTime();
+    const now = new Date().getTime();
+    const diff = endDate - now;
+    
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000;
+    
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+  };
+
+  setInterval(countdown, 1000);
+
+  // Initialize Swiper for logo carousel
+  const swiper = new Swiper('.logo-carousel', {
+    effect: 'creative',
+    creativeEffect: {
+      prev: {
+        opacity: 0,
+        scale: 0.7,
+      },
+      next: {
+        opacity: 0,
+        scale: 0.7,
+      },
+    },
+    loop: true,
+    autoplay: {
+      delay: 1,
+      disableOnInteraction: false,
+    },
+    speed: 3000,
+    grabCursor: true,
+    slidesPerView: 'auto',
+    spaceBetween: 50,
+    breakpoints: {
+      768: {
+        spaceBetween: 80
+      }
+    }
+  });
+
+  // Initialize Swiper for sponsors
+  const sponsorSwiper = new Swiper('.sponsor-swiper', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    loop: true,
+    slidesPerView: 'auto',
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 80,
+      depth: 200,
+      modifier: 1,
+      slideShadows: false,
+    },
+    autoplay: {
+      delay: 1500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      640: {
+        coverflowEffect: {
+          stretch: 120,
+          depth: 300,
+        }
+      },
+      1024: {
+        coverflowEffect: {
+          stretch: 150,
+          depth: 400,
+        }
+      }
+    }
+  });
+</script>

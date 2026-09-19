@@ -1,0 +1,217 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEDxYouth@October11th - NEXULA</title>
+  <link rel="icon" href="icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/7fdd346d74.js" crossorigin="anonymous"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Lato', sans-serif;
+      background-color: #000;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.85);
+      z-index: 10;
+      flex-wrap: wrap;
+    }
+    header img {
+      height: 60px;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #cd1e1e;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 5rem 1rem 3rem;
+      min-height: 85vh;
+    }
+    #headline {
+      font-size: 3rem;
+      font-weight: bold;
+      margin: 0;
+    }
+    .hero-text {
+      max-width: 700px;
+      font-size: 1.1rem;
+      color: #ddd;
+      line-height: 1.6;
+      margin-top: 1rem;
+    }
+    .book-btn {
+      margin-top: 2rem;
+      background: linear-gradient(135deg, #cd1e1e, #8f0707);
+      color: white;
+      font-weight: bold;
+      border-radius: 100px;
+      padding: 0.9rem 1.9rem;
+      font-size: 1.1rem;
+      border: 2px solid transparent;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+      min-width: 160px;
+      transition: all 0.3s ease;
+    }
+    .book-btn span {
+      position: relative;
+      z-index: 2;
+    }
+    .book-btn::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+      transform: rotate(25deg);
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+    .book-btn:hover::before {
+      opacity: 1;
+      animation: shine 1s ease forwards;
+    }
+    @keyframes shine {
+      0% {
+        transform: translateX(-100%) rotate(25deg);
+      }
+      100% {
+        transform: translateX(100%) rotate(25deg);
+      }
+    }
+    .event-info, .nexula-section, .tedx-section {
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+    .event-info h2, .nexula-section h2, .tedx-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .event-info p, .tedx-section p {
+      font-size: 1.2rem;
+      color: #ccc;
+      max-width: 900px;
+      margin: 0 auto 1.5rem;
+    }
+    .nexula-image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .nexula-image-grid img {
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <header>
+    <img src="logo_nav.png" alt="TEDx Logo">
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav id="main-nav">
+      <a href="#">Home</a>
+      <a href="#event">Event</a>
+      <a href="#about">Theme</a>
+      <a href="#tedx">What is TEDx</a>
+      <a href="#tickets">Tickets</a>
+    </nav>
+  </header>  <div class="hero">
+    <h1 id="headline">Welcome to <span style="color:#cd1e1e;">TEDxYouth@October11th</span></h1>
+    <p class="hero-text">Theme: <strong>NEXULA</strong> — A cosmic space where minds meet, stars are born, and the future begins.</p>
+    <a href="#tickets" class="book-btn"><span>Book Tickets!</span></a>
+  </div>  <section id="event" class="event-info">
+    <h2>Event Details</h2>
+    <p><strong>Date:</strong> August 5, 2025</p>
+    <p><strong>Time:</strong> 12:00 PM – 8:00 PM</p>
+    <p><strong>Location:</strong> City of October Educational Theater</p>
+    <a href="#tickets" class="book-btn"><span>Book Your Seat</span></a>
+  </section>  <section id="about" class="nexula-section">
+    <h2>What is <span style="color:#cd1e1e;">NEXULA</span>?</h2>
+    <p><strong>Nexus</strong> for connection. <strong>Nebula</strong> for new beginnings. Together, they form NEXULA — a universe of minds, dreams, and action.</p>
+    <div class="nexula-image-grid">
+      <img src="nexus.jpg" alt="Nexus">
+      <img src="nebula.jpg" alt="Nebula">
+    </div>
+  </section>  <section id="tedx" class="tedx-section">
+    <h2>What is TEDx?</h2>
+    <p>TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion and connection.</p>
+    <p>TEDx events are fully planned and coordinated independently, under a free license granted by TED. Our event is TEDxYouth@October11th, focused on youth voices, ideas worth spreading, and community impact.</p>
+    <p>To learn more, visit <a href="https://www.ted.com/tedx" target="_blank" style="color: #cd1e1e;">TEDx Official Website</a>.</p>
+  </section>  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 100 },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.4 },
+        size: { value: 2 },
+        line_linked: { enable: true, color: "#cd1e1e", opacity: 0.4 },
+        move: { enable: true, speed: 1 }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: { onclick: { enable: true, mode: "push" } },
+        modes: { push: { particles_nb: 4 } }
+      },
+      retina_detect: true
+    });
+
+    function toggleMenu() {
+      document.getElementById('main-nav').classList.toggle('show');
+    }
+  </script></body>
+</html>

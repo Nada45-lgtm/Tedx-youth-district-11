@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEDxYouth STEM Oct 11th District</title>
+  <link rel="icon" href="icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/7fdd346d74.js" crossorigin="anonymous"></script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      box-sizing: border-box;
+      flex-direction: column;
+    }
+
+    .page-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    canvas {
+      display: block;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #000000;
+      z-index: -1;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.85);
+      font-family: 'Orbitron', sans-serif;
+      position: relative;
+      z-index: 10;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0.5rem 1rem;
+      transition: color 0.3s;
+      font-size: 14px;
+    }
+
+    nav a.active:hover {
+      color: #a71212;
+    }
+
+    .book-btn, .attend-btn {
+      background: linear-gradient(135deg, #ff0000, #ff0000);
+      color: white;
+      font-weight: bold;
+      border-radius: 30px;
+      box-shadow: 0 0 8px #ff0000;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .book-btn {
+      padding: 0.5rem 1.2rem;
+    }
+
+    .attend-btn {
+      padding: 0.7rem 2rem;
+      font-size: 1.1rem;
+      font-family: 'Orbitron', sans-serif;
+      margin-top: 2rem;
+      border-radius: 40px;
+      display: inline-block;
+    }
+
+    .book-btn:hover,
+    .attend-btn:hover {
+      background: black;
+      color: #ffffff;
+      border-color: #8b0606;
+      box-shadow: 0 0 15px #ff0000;
+    }
+
+    .hero {
+      position: relative;
+      top: 20vh;
+      text-align: center;
+      color: white;
+      font-family: 'Open Sans', sans-serif;
+      z-index: 2;
+      padding: 0 20px;
+      opacity: 0;
+      animation: fadeIn 2s ease-in forwards;
+    }
+
+    #headline {
+      font-size: 4rem;
+      margin: 0 auto;
+      font-family: "Audiowide", sans-serif;
+    }
+
+    .hero-text {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #ddd;
+    }
+
+    .nexula-span {
+      color: #cd0909;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #000;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+
+    footer a {
+      color: #dddddd;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #ff0000;
+    }
+
+    .social-icons {
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .social-icons a {
+      font-size: 1.2rem;
+      color: #dddddd;
+    }
+
+    .social-icons a:hover {
+      color: #ff0000;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        text-align: center;
+        padding: 1rem 0;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      nav a {
+        margin: 0.7rem 0;
+        font-size: 15px;
+      }
+
+      #headline {
+        font-size: 2.5rem;
+      }
+
+      .hero-text {
+        font-size: 1rem;
+      }
+
+      header img {
+        height: 50px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #headline {
+        font-size: 2rem;
+      }
+
+      .hero {
+        top: 15vh;
+        padding: 0 10px;
+      }
+
+      .hero-text {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <div class="page-container">
+
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+
+    <header>
+      <img src="logo_nav.png" alt="TEDx Logo">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <nav id="main-nav">
+        <a href="#index.html" class="active">Home</a>
+        <a href="#Aboutus" class="active">About Us</a>
+        <a href="#Articles.html" class="active">Articles</a>
+        <a href="#tickets.html" class="active">Our Event</a>
+        <a href="#signup.html" class="book-btn">Book a Ticket</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <h1 id="headline">Welcome to <span class="nexula-span">NEXULA !</span></h1>
+      <p class="hero-text">
+        A cosmic space where connections ignite and new stars rise.<br>
+        Join us as we link the brightest minds in our community together.
+      </p>
+      <a href="#signup.html" class="attend-btn">Attend</a>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 TEDxYouth@October11th. All rights reserved. |
+    <a href="privacy-policy.html">Privacy Policy</a> |
+    <a href="terms-of-use.html">Terms of Use</a> |
+    <a href="/About-us.html">Team</a> |
+    <a href="mailto:tedx@gmail.com">Contact</a>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/tedxyouthoctobe11stem" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/201055485256" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:tedxoct11@gmail.com" aria-label="Gmail" target="_blank"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.tiktok.com/@tedxyouthoctobe11stem" aria-label="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.facebook.com/TEDxYouthOctober11thSTEM" aria-label="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 150, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" } },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ff0000", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 6 }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": { "onclick": { "enable": true, "mode": "push" }, "resize": true },
+        "modes": { "push": { "particles_nb": 4 } }
+      },
+      "retina_detect": true
+    });
+
+    
+    var stats = new Stats();
+    stats.setMode(0);
+    stats.domElement.style.position = 'absolute';
+    stats.domElement.style.left = '0px';
+    stats.domElement.style.top = '0px';
+    document.body.appendChild(stats.domElement);
+    var update = function () {
+      stats.begin();
+      stats.end();
+      requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+
+    
+    function toggleMenu() {
+      document.getElementById('main-nav').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
