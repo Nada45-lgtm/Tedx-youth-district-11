@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>رحلتك تبدأ من هنا</title>
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Cairo', sans-serif;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .option {
+      background-color: #111;
+      padding: 20px;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+      border: 1px solid #444;
+    }
+
+    .option:hover {
+      background-color: #222;
+    }
+
+    .selected {
+      background-color: #e60023 !important;
+      color: #fff;
+    }
+
+    .cta-button {
+      background-color: #e60023;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #c4001d;
+    }
+
+    .result {
+      margin-top: 40px;
+      background-color: #111;
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 600px;
+      margin-inline: auto;
+      display: none;
+      border: 1px solid #333;
+    }
+
+    .result h2 {
+      color: #e60023;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>رحلتك تبدأ من هنا</h1>
+  <p>قبل ما تنطلق في مهمتك، لازم نعرف إنت في طاقم المستقبل؟</p>
+
+  <div class="options">
+    <div class="option" onclick="selectOption(this)">أخلد وأحل هدوء</div>
+    <div class="option" onclick="selectOption(this)">أجرب فورة وأتعلم من الغلط</div>
+    <div class="option" onclick="selectOption(this)">أطلب نصيحة وأشتغل مع فريقي</div>
+    <div class="option" onclick="selectOption(this)">أدور على طريقة مبتكرة أواجه بيها الموقف</div>
+  </div>
+
+  <button class="cta-button" onclick="bookSeat()">احجز مكانك في المركبة</button>
+
+  <div class="result" id="resultBox">
+    <h2 id="resultTitle">شخصيتك:</h2>
+    <p id="resultText">...</p>
+  </div>
+
+  <script>
+    let selectedOption = null;
+
+    const resultData = {
+      "أخلد وأحل هدوء": {
+        title: "المحلل الهادئ",
+        text: "بتحب تفهم كل حاجة من جذورها قبل ما تتحرك. عندك نظرة تفصيلية وبتحب التخطيط. أنت الشخص اللي بيحط الخطط ويحسب خطواته بدقة."
+      },
+      "أجرب فورة وأتعلم من الغلط": {
+        title: "المتعلم بالمغامرة",
+        text: "مش بتستنى الفرصة، بتخلقها. بتتعلم من التجربة، حتى لو فيها مخاطرة بسيطة. أنت اللي دايمًا أول واحد يبدأ، حتى لو الطريق مش واضح."
+      },
+      "أطلب نصيحة وأشتغل مع فريقي": {
+        title: "اللي بيلم الفريق",
+        text: "بتحب تشتغل مع ناس، وتفهمهم وتوصل الأفكار. عندك قدرة طبيعية على القيادة بالراحة مش بالسيطرة. أنت اللي بتخلق جو مريح حوالين الناس."
+      },
+      "أدور على طريقة مبتكرة أواجه بيها الموقف": {
+        title: "المبتكر العملي",
+        text: "بتشوف الحل في زاوية محدش واخد باله منها. بتجمع بين التفكير والإبداع، بس عندك عين على التطبيق. أنت اللي بتلاقي طريقة جديدة دايمًا."
+      }
+    };
+
+    function selectOption(el) {
+      document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedOption = el.textContent;
+    }
+
+    function bookSeat() {
+      if (!selectedOption) {
+        alert('اختار إجابتك الأول');
+        return;
+      }
+
+      const result = resultData[selectedOption];
+      document.getElementById('resultTitle').textContent = `🚀 شخصيتك: ${result.title}`;
+      document.getElementById('resultText').textContent = result.text;
+      document.getElementById('resultBox').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
